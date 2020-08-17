@@ -1,7 +1,7 @@
 @echo off
 set "t=%time%"
 
-ffmpeg -i D:\video\akb.avi -vcodec libx264 -preset veryfast -filter:v "setpts=12*PTS" D:\video\akb12very.avi
+ffmpeg -i D:\video\akb.avi -vcodec libx264 -pass 1 -preset veryfast -filter:v "setpts=12*PTS" D:\video\akb12very_pass.avi
 
 set "t1=%time%"
 if "%t1:~,2%" lss "%t:~,2%" set "add=+24"
